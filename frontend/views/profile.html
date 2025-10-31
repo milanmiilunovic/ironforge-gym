@@ -1,0 +1,246 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>My Profile</h2>
+                    <div class="bt-option">
+                        
+                        <span>Profile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Profile Section Begin -->
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <!-- Profile Sidebar -->
+            <div class="col-lg-4">
+                <div style="background: #0a0a0a; padding: 30px; border-radius: 8px; border: 1px solid #363636; text-align: center; margin-bottom: 30px;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; background: #252525; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; border: 4px solid #f36100;">
+                        <i class="fa fa-user" style="font-size: 60px; color: #f36100;"></i>
+                    </div>
+                    <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 5px;">Milan Milunovic</h4>
+                    <p style="color: #f36100; font-size: 14px; font-weight: 600; text-transform: uppercase; margin-bottom: 20px;">PREMIUM MEMBER</p>
+                    
+                    <div style="background: #151515; padding: 15px; border-radius: 5px; margin-bottom: 20px; text-align: left;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="color: #c4c4c4; font-size: 14px;">Member Since:</span>
+                            <span style="color: #ffffff; font-size: 14px; font-weight: 600;">Jan 2025</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #c4c4c4; font-size: 14px;">Total Sessions:</span>
+                            <span style="color: #ffffff; font-size: 14px; font-weight: 600;">45</span>
+                        </div>
+                    </div>
+
+                    <button onclick="document.getElementById('profileForm').scrollIntoView({behavior: 'smooth'})" style="background: #f36100; color: #ffffff; padding: 12px 25px; border: none; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; margin-bottom: 10px;">
+                        EDIT PROFILE
+                    </button>
+                    <a href="#/dashboard" class="nav-link" style="display: block; background: #363636; color: #ffffff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600;">
+                        DASHBOARD
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Form -->
+            <div class="col-lg-8">
+                <div style="background: #0a0a0a; padding: 40px; border-radius: 8px; border: 1px solid #363636;">
+                    <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 30px; display: flex; align-items: center;">
+                        <i class="fa fa-user-circle" style="color: #f36100; margin-right: 10px;"></i>
+                        Personal Information
+                    </h4>
+
+                    <form id="profileForm">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">Full Name</label>
+                                    <input type="text" 
+                                           id="name" 
+                                           value="Milan Milunovic"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: transparent; margin-bottom: 20px;">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">Email Address</label>
+                                    <input type="email" 
+                                           id="email" 
+                                           value="milan.milunovic@example.com"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: transparent; margin-bottom: 20px;">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">Phone Number</label>
+                                    <input type="tel" 
+                                           id="phone" 
+                                           value="+387 61 234 567"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: transparent; margin-bottom: 20px;">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">Date of Birth</label>
+                                    <input type="date" 
+                                           id="dob" 
+                                           value="1990-01-15"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: #151515; margin-bottom: 20px;">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">Address</label>
+                                    <input type="text" 
+                                           id="address" 
+                                           value="Sarajevo, Bosnia and Herzegovina"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: transparent; margin-bottom: 20px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 20px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #363636; display: flex; align-items: center;">
+                            <i class="fa fa-lock" style="color: #f36100; margin-right: 10px;"></i>
+                            Change Password
+                        </h4>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">Current Password</label>
+                                    <input type="password" 
+                                           id="currentPassword"
+                                           placeholder="Enter current password"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: transparent; margin-bottom: 20px;">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">New Password</label>
+                                    <input type="password" 
+                                           id="newPassword"
+                                           placeholder="Enter new password"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: transparent; margin-bottom: 20px;">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label style="color: #ffffff; margin-bottom: 10px; font-weight: 600;">Confirm New Password</label>
+                                    <input type="password" 
+                                           id="confirmPassword"
+                                           placeholder="Confirm new password"
+                                           style="font-size: 14px; color: #c4c4c4; width: 100%; height: 50px; border: 1px solid #363636; padding-left: 20px; background: transparent; margin-bottom: 20px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; margin-top: 10px;">
+                            <button type="submit" 
+                                    class="primary-btn"
+                                    style="flex: 1; padding: 15px; border: none; cursor: pointer;">
+                                SAVE CHANGES
+                            </button>
+                            <button type="button" 
+                                    onclick="document.getElementById('profileForm').reset()"
+                                    style="flex: 1; padding: 15px; border: 1px solid #363636; background: transparent; color: #c4c4c4; cursor: pointer; font-weight: 600; text-transform: uppercase;">
+                                CANCEL
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Membership Info -->
+                <div style="background: #0a0a0a; padding: 30px; border-radius: 8px; border: 1px solid #363636; margin-top: 30px;">
+                    <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 20px; display: flex; align-items: center;">
+                        <i class="fa fa-id-card" style="color: #f36100; margin-right: 10px;"></i>
+                        Membership Details
+                    </h4>
+                    
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div style="background: #151515; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                                <p style="color: #c4c4c4; font-size: 13px; margin-bottom: 5px;">Current Plan</p>
+                                <h5 style="color: #f36100; font-weight: 600; margin-bottom: 0;">PREMIUM</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div style="background: #151515; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                                <p style="color: #c4c4c4; font-size: 13px; margin-bottom: 5px;">Monthly Fee</p>
+                                <h5 style="color: #ffffff; font-weight: 600; margin-bottom: 0;">79 KM</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div style="background: #151515; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                                <p style="color: #c4c4c4; font-size: 13px; margin-bottom: 5px;">Next Billing Date</p>
+                                <h5 style="color: #ffffff; font-weight: 600; margin-bottom: 0;">Nov 15, 2025</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div style="background: #151515; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                                <p style="color: #c4c4c4; font-size: 13px; margin-bottom: 5px;">Status</p>
+                                <h5 style="color: #4caf50; font-weight: 600; margin-bottom: 0;">ACTIVE</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px;">
+                        <button style="flex: 1; background: #f36100; color: #ffffff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                            UPGRADE PLAN
+                        </button>
+                        <button style="flex: 1; background: transparent; color: #c4c4c4; padding: 12px 25px; border: 1px solid #363636; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                            VIEW BILLING HISTORY
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Profile Section End -->
+
+<script>
+
+document.getElementById('profileForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const newPassword = document.getElementById('newPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    
+    
+    if (newPassword || confirmPassword) {
+        if (newPassword !== confirmPassword) {
+            alert('New passwords do not match!');
+            return;
+        }
+        if (!document.getElementById('currentPassword').value) {
+            alert('Please enter your current password!');
+            return;
+        }
+    }
+    
+    const profileData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        dob: document.getElementById('dob').value,
+        address: document.getElementById('address').value
+    };
+    
+    
+    console.log('Profile update:', profileData);
+    alert('Profile updated successfully!');
+});
+</script>

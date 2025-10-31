@@ -1,0 +1,274 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>My Bookings</h2>
+                    <div class="bt-option">
+                        <a href="#/" class="nav-link">Home</a>
+                        <span>Bookings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Bookings Section Begin -->
+<section class="pricing-section spad">
+    <div class="container">
+        <!-- Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap;">
+                    <div>
+                        <h3 style="color: #ffffff; font-weight: 600; margin-bottom: 5px;">My Bookings</h3>
+                        <p style="color: #c4c4c4; margin-bottom: 0;">Manage your class reservations</p>
+                    </div>
+                    <a href="#/classes" class="primary-btn nav-link" style="margin-top: 15px;">
+                        <i class="fa fa-plus"></i> BOOK NEW CLASS
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="background: #0a0a0a; padding: 20px; border-radius: 8px; border: 1px solid #363636; margin-bottom: 30px;">
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button class="booking-filter active" data-status="all" style="background: #f36100; color: #ffffff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                            All (12)
+                        </button>
+                        <button class="booking-filter" data-status="upcoming" style="background: #252525; color: #c4c4c4; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                            Upcoming (8)
+                        </button>
+                        <button class="booking-filter" data-status="completed" style="background: #252525; color: #c4c4c4; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                            Completed (4)
+                        </button>
+                        <button class="booking-filter" data-status="cancelled" style="background: #252525; color: #c4c4c4; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                            Cancelled (0)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bookings List -->
+        <div class="row" id="bookingsList">
+            
+            <div class="col-lg-12 booking-item" data-status="upcoming">
+                <div style="background: #0a0a0a; padding: 25px; border-radius: 8px; border: 1px solid #363636; border-left: 4px solid #f36100; margin-bottom: 20px;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-3">
+                            <div style="text-align: center; padding: 15px; background: #151515; border-radius: 5px;">
+                                <div style="color: #f36100; font-size: 32px; font-weight: 700; line-height: 1;">18</div>
+                                <div style="color: #c4c4c4; font-size: 14px; margin-top: 5px;">OCT 2025</div>
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 600; margin-top: 5px;">5:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5">
+                            <span style="display: inline-block; background: rgba(243, 97, 0, 0.1); color: #f36100; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 10px;">STRENGTH</span>
+                            <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 8px;">Weightlifting Class</h4>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 10px;">
+                                <i class="fa fa-user" style="color: #f36100; margin-right: 5px;"></i>
+                                Trainer: Mike Johnson
+                            </p>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 0;">
+                                <i class="fa fa-clock-o" style="color: #f36100; margin-right: 5px;"></i>
+                                Duration: 60 minutes
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <span style="display: inline-block; background: rgba(76, 175, 80, 0.1); color: #4caf50; padding: 8px 15px; border-radius: 5px; font-size: 13px; font-weight: 600;">
+                                CONFIRMED
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <button onclick="cancelBooking(this)" style="width: 100%; background: transparent; color: #ff4444; padding: 10px; border: 1px solid #ff4444; border-radius: 5px; cursor: pointer; font-weight: 600; margin-bottom: 10px;">
+                                CANCEL
+                            </button>
+                            <button style="width: 100%; background: #363636; color: #ffffff; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                                DETAILS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-12 booking-item" data-status="upcoming">
+                <div style="background: #0a0a0a; padding: 25px; border-radius: 8px; border: 1px solid #363636; border-left: 4px solid #f36100; margin-bottom: 20px;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-3">
+                            <div style="text-align: center; padding: 15px; background: #151515; border-radius: 5px;">
+                                <div style="color: #f36100; font-size: 32px; font-weight: 700; line-height: 1;">19</div>
+                                <div style="color: #c4c4c4; font-size: 14px; margin-top: 5px;">OCT 2025</div>
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 600; margin-top: 5px;">8:00 AM</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5">
+                            <span style="display: inline-block; background: rgba(243, 97, 0, 0.1); color: #f36100; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 10px;">FLEXIBILITY</span>
+                            <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 8px;">Yoga & Stretch</h4>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 10px;">
+                                <i class="fa fa-user" style="color: #f36100; margin-right: 5px;"></i>
+                                Trainer: Sarah Williams
+                            </p>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 0;">
+                                <i class="fa fa-clock-o" style="color: #f36100; margin-right: 5px;"></i>
+                                Duration: 60 minutes
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <span style="display: inline-block; background: rgba(76, 175, 80, 0.1); color: #4caf50; padding: 8px 15px; border-radius: 5px; font-size: 13px; font-weight: 600;">
+                                CONFIRMED
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <button onclick="cancelBooking(this)" style="width: 100%; background: transparent; color: #ff4444; padding: 10px; border: 1px solid #ff4444; border-radius: 5px; cursor: pointer; font-weight: 600; margin-bottom: 10px;">
+                                CANCEL
+                            </button>
+                            <button style="width: 100%; background: #363636; color: #ffffff; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                                DETAILS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-12 booking-item" data-status="upcoming">
+                <div style="background: #0a0a0a; padding: 25px; border-radius: 8px; border: 1px solid #363636; border-left: 4px solid #f36100; margin-bottom: 20px;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-3">
+                            <div style="text-align: center; padding: 15px; background: #151515; border-radius: 5px;">
+                                <div style="color: #f36100; font-size: 32px; font-weight: 700; line-height: 1;">20</div>
+                                <div style="color: #c4c4c4; font-size: 14px; margin-top: 5px;">OCT 2025</div>
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 600; margin-top: 5px;">6:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5">
+                            <span style="display: inline-block; background: rgba(243, 97, 0, 0.1); color: #f36100; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 10px;">COMBAT</span>
+                            <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 8px;">Boxing Training</h4>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 10px;">
+                                <i class="fa fa-user" style="color: #f36100; margin-right: 5px;"></i>
+                                Trainer: David Martinez
+                            </p>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 0;">
+                                <i class="fa fa-clock-o" style="color: #f36100; margin-right: 5px;"></i>
+                                Duration: 55 minutes
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <span style="display: inline-block; background: rgba(76, 175, 80, 0.1); color: #4caf50; padding: 8px 15px; border-radius: 5px; font-size: 13px; font-weight: 600;">
+                                CONFIRMED
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <button onclick="cancelBooking(this)" style="width: 100%; background: transparent; color: #ff4444; padding: 10px; border: 1px solid #ff4444; border-radius: 5px; cursor: pointer; font-weight: 600; margin-bottom: 10px;">
+                                CANCEL
+                            </button>
+                            <button style="width: 100%; background: #363636; color: #ffffff; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                                DETAILS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-12 booking-item" data-status="completed">
+                <div style="background: #0a0a0a; padding: 25px; border-radius: 8px; border: 1px solid #363636; border-left: 4px solid #4caf50; margin-bottom: 20px; opacity: 0.8;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-3">
+                            <div style="text-align: center; padding: 15px; background: #151515; border-radius: 5px;">
+                                <div style="color: #4caf50; font-size: 32px; font-weight: 700; line-height: 1;">15</div>
+                                <div style="color: #c4c4c4; font-size: 14px; margin-top: 5px;">OCT 2025</div>
+                                <div style="color: #ffffff; font-size: 16px; font-weight: 600; margin-top: 5px;">5:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5">
+                            <span style="display: inline-block; background: rgba(243, 97, 0, 0.1); color: #f36100; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 10px;">CARDIO</span>
+                            <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 8px;">Indoor Cycling</h4>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 10px;">
+                                <i class="fa fa-user" style="color: #f36100; margin-right: 5px;"></i>
+                                Trainer: Emma Thompson
+                            </p>
+                            <p style="color: #c4c4c4; font-size: 14px; margin-bottom: 0;">
+                                <i class="fa fa-clock-o" style="color: #f36100; margin-right: 5px;"></i>
+                                Duration: 50 minutes
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <span style="display: inline-block; background: rgba(76, 175, 80, 0.1); color: #4caf50; padding: 8px 15px; border-radius: 5px; font-size: 13px; font-weight: 600;">
+                                COMPLETED
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <button style="width: 100%; background: #f36100; color: #ffffff; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; margin-bottom: 10px;">
+                                REVIEW
+                            </button>
+                            <button style="width: 100%; background: #363636; color: #ffffff; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                                BOOK AGAIN
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="emptyState" style="display: none; text-align: center; padding: 80px 20px; background: #0a0a0a; border-radius: 8px; border: 1px solid #363636;">
+            <i class="fa fa-calendar-times-o" style="font-size: 64px; color: #363636; margin-bottom: 20px;"></i>
+            <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 10px;">No Bookings Found</h4>
+            <p style="color: #c4c4c4; margin-bottom: 30px;">You don't have any bookings in this category yet.</p>
+            <a href="#/classes" class="primary-btn nav-link">BROWSE CLASSES</a>
+        </div>
+    </div>
+</section>
+<!-- Bookings Section End -->
+
+<script>
+
+document.querySelectorAll('.booking-filter').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const status = this.dataset.status;
+        
+        
+        document.querySelectorAll('.booking-filter').forEach(b => {
+            b.style.background = '#252525';
+            b.style.color = '#c4c4c4';
+        });
+        this.style.background = '#f36100';
+        this.style.color = '#ffffff';
+        
+        
+        const bookings = document.querySelectorAll('.booking-item');
+        let visibleCount = 0;
+        
+        bookings.forEach(item => {
+            if (status === 'all' || item.dataset.status === status) {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        
+        document.getElementById('emptyState').style.display = visibleCount === 0 ? 'block' : 'none';
+        document.getElementById('bookingsList').style.display = visibleCount === 0 ? 'none' : 'block';
+    });
+});
+
+
+function cancelBooking(btn) {
+    if (confirm('Are you sure you want to cancel this booking?')) {
+        
+        alert('Booking cancelled!');
+        btn.closest('.booking-item').remove();
+    }
+}
+</script>
