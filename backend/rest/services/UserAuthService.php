@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . '/../dao/UserDao.php';
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
-
-
+use Firebase\JWT\JWT;
 
 class UserAuthService {
     private $userDao;
@@ -26,13 +26,11 @@ class UserAuthService {
             throw new Exception("Full name is required");
         }
 
-        // Check if email already exists
         $existingUser = $this->userDao->getByEmail($userData['email']);
         if ($existingUser) {
             throw new Exception("Email already registered");
         }
 
-        // Hash password
         $userData['password_hash'] = password_hash($userData['password'], PASSWORD_BCRYPT);
         unset($userData['password']);
 
@@ -47,28 +45,33 @@ class UserAuthService {
         ];
     }
 
-        // Login user
+    // Login user + JWT
     public function login($email, $password) {
         if (empty($email) || empty($password)) {
             throw new Exception("Email and password are required");
         }
 
         $user = $this->userDao->getByEmail($email);
-        if (!$user) {
-                throw new Exception("Invalid email or password");
-        }
-
-        if (!password_verify($password, $user['password_hash'])) {
-                throw new Exception("Invalid email or password");
+        if (!$user || !password_verify($password, $user['password_hash'])) {
+            throw new Exception("Invalid email or password");
         }
 
         unset($user['password_hash']);
 
+        // JWT payload
+        $payload = [
+            'user' => $user,
+            'iat' => time(),
+            'exp' => time() + (60*60*24) 
+        ];
+
+        $token = JWT::encode($payload, Config::JWT_SECRET(), 'HS256');
+
         return [
             'success' => true,
             'message' => 'Login successful',
-            'user' => $user
+            'user' => $user,
+            'token' => $token
         ];
     }
 }
-?>

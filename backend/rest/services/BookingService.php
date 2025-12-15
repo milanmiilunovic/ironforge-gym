@@ -36,7 +36,6 @@ class BookingService {
         $user = $this->userDao->getById($data['user_id']);
         if (!$user) throw new Exception("User not found");
 
-        // Check if user already booked the same class
         $existing = $this->bookingDao->getUserClassBooking($data['user_id'], $data['class_id']);
         if ($existing) throw new Exception("You already booked this class");
 
