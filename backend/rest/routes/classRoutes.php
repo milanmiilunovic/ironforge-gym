@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../services/ClassService.php';
+require_once __DIR__ . '/../../data/roles.php';
 
+// ==== CREATE CLASS (ADMIN) ==== //
 /**
  * @OA\Post(
  *     path="/classes",
@@ -26,10 +28,12 @@ require_once __DIR__ . '/../services/ClassService.php';
  * )
  */
 Flight::route('POST /classes', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::classService()->createClass($data));
 });
 
+// ==== UPDATE CLASS (ADMIN) ==== //
 /**
  * @OA\Put(
  *     path="/classes/{id}",
@@ -61,10 +65,12 @@ Flight::route('POST /classes', function() {
  * )
  */
 Flight::route('PUT /classes/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::classService()->updateClass($id, $data));
 });
 
+// ==== DELETE CLASS (ADMIN) ==== //
 /**
  * @OA\Delete(
  *     path="/classes/{id}",
@@ -84,9 +90,11 @@ Flight::route('PUT /classes/@id', function($id) {
  * )
  */
 Flight::route('DELETE /classes/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(Flight::classService()->deleteClass($id));
 });
 
+// ==== GET ALL CLASSES (USER) ==== //
 /**
  * @OA\Get(
  *     path="/classes",
@@ -99,9 +107,11 @@ Flight::route('DELETE /classes/@id', function($id) {
  * )
  */
 Flight::route('GET /classes', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::classService()->getAllClasses());
 });
 
+// ==== GET CLASSES SCHEDULE (USER) ==== //
 /**
  * @OA\Get(
  *     path="/classes/schedule",
@@ -114,9 +124,11 @@ Flight::route('GET /classes', function() {
  * )
  */
 Flight::route('GET /classes/schedule', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::classService()->getSchedule());
 });
 
+// ==== GET CLASS BY ID (USER) ==== //
 /**
  * @OA\Get(
  *     path="/classes/{id}",
@@ -136,7 +148,7 @@ Flight::route('GET /classes/schedule', function() {
  * )
  */
 Flight::route('GET /classes/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::classService()->getClassById($id));  
 });
-
 ?>

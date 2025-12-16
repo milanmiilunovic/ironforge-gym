@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../services/MembershipService.php';
+require_once __DIR__ . '/../../data/roles.php';
 
+// ==== PURCHASE MEMBERSHIP (USER) ==== //
 /**
  * @OA\Post(
  *     path="/memberships",
@@ -22,10 +24,12 @@ require_once __DIR__ . '/../services/MembershipService.php';
  * )
  */
 Flight::route('POST /memberships', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::membershipService()->purchaseMembership($data));
 });
 
+// ==== GET ALL MEMBERSHIPS FOR USER (USER) ==== //
 /**
  * @OA\Get(
  *     path="/memberships/user/{user_id}",
@@ -45,9 +49,11 @@ Flight::route('POST /memberships', function() {
  * )
  */
 Flight::route('GET /memberships/user/@user_id', function($user_id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::membershipService()->getUserMemberships($user_id));
 });
 
+// ==== GET ACTIVE MEMBERSHIP FOR USER (USER) ==== //
 /**
  * @OA\Get(
  *     path="/memberships/user/{user_id}/active",
@@ -67,9 +73,11 @@ Flight::route('GET /memberships/user/@user_id', function($user_id) {
  * )
  */
 Flight::route('GET /memberships/user/@user_id/active', function($user_id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::membershipService()->getActiveMembership($user_id));
 });
 
+// ==== GET ALL MEMBERSHIPS (ADMIN) ==== //
 /**
  * @OA\Get(
  *     path="/memberships",
@@ -82,9 +90,11 @@ Flight::route('GET /memberships/user/@user_id/active', function($user_id) {
  * )
  */
 Flight::route('GET /memberships', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(Flight::membershipService()->getAllMemberships());
 });
 
+// ==== DELETE MEMBERSHIP BY ID (ADMIN) ==== //
 /**
  * @OA\Delete(
  *     path="/memberships/{id}",
@@ -104,6 +114,7 @@ Flight::route('GET /memberships', function() {
  * )
  */
 Flight::route('DELETE /memberships/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(Flight::membershipService()->deleteMembership($id));
 });
 ?>

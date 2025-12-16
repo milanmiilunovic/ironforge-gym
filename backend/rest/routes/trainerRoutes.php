@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../services/TrainerService.php';
+require_once __DIR__ . '/../../data/roles.php'; // za Roles
 
+// ==== GET ALL TRAINERS ==== //
 /**
  * @OA\Get(
  *     path="/trainers",
@@ -13,9 +15,11 @@ require_once __DIR__ . '/../services/TrainerService.php';
  * )
  */
 Flight::route('GET /trainers', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::trainerService()->getAllTrainers());
 });
 
+// ==== GET TRAINER BY ID ==== //
 /**
  * @OA\Get(
  *     path="/trainers/{id}",
@@ -35,9 +39,11 @@ Flight::route('GET /trainers', function() {
  * )
  */
 Flight::route('GET /trainers/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::trainerService()->getTrainerById($id));
 });
 
+// ==== CREATE TRAINER (ADMIN) ==== //
 /**
  * @OA\Post(
  *     path="/trainers",
@@ -61,10 +67,12 @@ Flight::route('GET /trainers/@id', function($id) {
  * )
  */
 Flight::route('POST /trainers', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::trainerService()->createTrainer($data));
 });
 
+// ==== UPDATE TRAINER (ADMIN) ==== //
 /**
  * @OA\Put(
  *     path="/trainers/{id}",
@@ -94,10 +102,12 @@ Flight::route('POST /trainers', function() {
  * )
  */
 Flight::route('PUT /trainers/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::trainerService()->updateTrainer($id, $data));
 });
 
+// ==== DELETE TRAINER (ADMIN) ==== //
 /**
  * @OA\Delete(
  *     path="/trainers/{id}",
@@ -117,9 +127,11 @@ Flight::route('PUT /trainers/@id', function($id) {
  * )
  */
 Flight::route('DELETE /trainers/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(Flight::trainerService()->deleteTrainer($id));
 });
 
+// ==== GET TRAINER AVAILABILITY ==== //
 /**
  * @OA\Get(
  *     path="/trainers/{id}/availability",
@@ -139,6 +151,7 @@ Flight::route('DELETE /trainers/@id', function($id) {
  * )
  */
 Flight::route('GET /trainers/@id/availability', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::trainerService()->getTrainerAvailability($id));
 });
 ?>

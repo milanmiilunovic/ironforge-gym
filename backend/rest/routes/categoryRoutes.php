@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../services/CategoryService.php';
+require_once __DIR__ . '/../../data/roles.php'; 
 
+// ==== CREATE CATEGORY ==== //
 /**
  * @OA\Post(
  *     path="/categories",
@@ -21,10 +23,12 @@ require_once __DIR__ . '/../services/CategoryService.php';
  * )
  */
 Flight::route('POST /categories', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::categoryService()->createCategory($data));
 });
 
+// ==== UPDATE CATEGORY ==== //
 /**
  * @OA\Put(
  *     path="/categories/{id}",
@@ -51,10 +55,12 @@ Flight::route('POST /categories', function() {
  * )
  */
 Flight::route('PUT /categories/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::categoryService()->updateCategory($id, $data));
 });
 
+// ==== DELETE CATEGORY ==== //
 /**
  * @OA\Delete(
  *     path="/categories/{id}",
@@ -74,9 +80,11 @@ Flight::route('PUT /categories/@id', function($id) {
  * )
  */
 Flight::route('DELETE /categories/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(Flight::categoryService()->deleteCategory($id));
 });
 
+// ==== GET ALL CATEGORIES ==== //
 /**
  * @OA\Get(
  *     path="/categories",
@@ -89,9 +97,11 @@ Flight::route('DELETE /categories/@id', function($id) {
  * )
  */
 Flight::route('GET /categories', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::USER); 
     Flight::json(Flight::categoryService()->getAllCategories());
 });
 
+// ==== GET CATEGORY BY ID ==== //
 /**
  * @OA\Get(
  *     path="/categories/{id}",
@@ -111,7 +121,7 @@ Flight::route('GET /categories', function() {
  * )
  */
 Flight::route('GET /categories/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER); 
     Flight::json(Flight::categoryService()->getCategoryById($id));
 });
-
 ?>

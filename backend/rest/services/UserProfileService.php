@@ -16,7 +16,7 @@ class UserProfileService {
         $user = $this->userDao->getById($userId);
         if (!$user) throw new Exception("User not found");
 
-        unset($user['password_hash']); // uklonimo osjetljive podatke
+        unset($user['password_hash']); 
         $user['active_membership'] = $this->userMembershipDao->getActiveMembership($userId);
         return $user;
     }
@@ -34,7 +34,7 @@ class UserProfileService {
             }
         }
 
-        // Uklonimo polje password ako je slučajno poslano
+       
         if (isset($updates['password'])) {
             unset($updates['password']);
         }

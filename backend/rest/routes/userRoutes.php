@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/../services/UserService.php';
+require_once __DIR__ . '/../../data/roles.php';
 
+
+// ==== REGISTER USER ==== //
 /**
  * @OA\Post(
  *     path="/users/register",
@@ -26,6 +29,7 @@ Flight::route('POST /users/register', function() {
     Flight::json(Flight::userService()->registerUser($data));
 });
 
+// ==== LOGIN USER ==== //
 /**
  * @OA\Post(
  *     path="/users/login",
@@ -50,6 +54,7 @@ Flight::route('POST /users/login', function() {
     Flight::json(Flight::userService()->login($data['email'], $data['password']));
 });
 
+// ==== GET USER PROFILE ==== //
 /**
  * @OA\Get(
  *     path="/users/{id}/profile",
@@ -69,9 +74,11 @@ Flight::route('POST /users/login', function() {
  * )
  */
 Flight::route('GET /users/@id/profile', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     Flight::json(Flight::userService()->getUserProfile($id));
 });
 
+// ==== UPDATE USER PROFILE ==== //
 /**
  * @OA\Put(
  *     path="/users/{id}/profile",
@@ -98,10 +105,12 @@ Flight::route('GET /users/@id/profile', function($id) {
  * )
  */
 Flight::route('PUT /users/@id/profile', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::userService()->updateProfile($id, $data));
 });
 
+// ==== CHANGE PASSWORD ==== //
 /**
  * @OA\Put(
  *     path="/users/{id}/password",
@@ -129,10 +138,12 @@ Flight::route('PUT /users/@id/profile', function($id) {
  * )
  */
 Flight::route('PUT /users/@id/password', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::USER);
     $data = Flight::request()->data->getData();
     Flight::json(Flight::userService()->changePassword($id, $data['old_password'], $data['new_password']));
 });
 
+// ==== GET ALL USERS (ADMIN) ==== //
 /**
  * @OA\Get(
  *     path="/users",
@@ -145,9 +156,11 @@ Flight::route('PUT /users/@id/password', function($id) {
  * )
  */
 Flight::route('GET /users', function() {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(Flight::userService()->getAllUsers());
 });
 
+// ==== DELETE USER (ADMIN) ==== //
 /**
  * @OA\Delete(
  *     path="/users/{id}",
@@ -167,6 +180,7 @@ Flight::route('GET /users', function() {
  * )
  */
 Flight::route('DELETE /users/@id', function($id) {
+    Flight::auth_middleware()->authorizeRole(Roles::ADMIN);
     Flight::json(Flight::userService()->deleteUser($id));
 });
 ?>

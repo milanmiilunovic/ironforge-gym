@@ -8,7 +8,8 @@ class BaseDao {
 
     public function __construct($table) {
         $this->table = $table;
-        $this->connection = Database::connect();
+        $this->connection = Config::connect();
+
 
         
         $primaryKeys = [

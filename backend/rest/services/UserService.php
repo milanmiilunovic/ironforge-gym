@@ -22,7 +22,7 @@ class UserService {
         $this->bookingDao = new BookingDao();
     }
 
-    /* ===== AUTH ===== */
+    
     public function registerUser($userData) {
         return $this->authService->registerUser($userData);
     }
@@ -31,7 +31,7 @@ class UserService {
         return $this->authService->login($email, $password);
     }
 
-    /* ===== PROFILE ===== */
+
     public function getUserProfile($userId) {
         return $this->profileService->getUserProfile($userId);
     }
@@ -44,7 +44,7 @@ class UserService {
         return $this->profileService->changePassword($userId, $oldPassword, $newPassword);
     }
 
-    /* ===== MEMBERSHIP ===== */
+    
     public function hasActiveMembership($userId) {
         return $this->membershipService->hasActiveMembership($userId);
     }
@@ -53,7 +53,7 @@ class UserService {
         return $this->membershipService->getUserMemberships($userId);
     }
 
-    /* ===== ADMIN ===== */
+    
     public function getAllUsers() {
         return $this->adminService->getAllUsers();
     }
@@ -62,7 +62,7 @@ class UserService {
         return $this->adminService->deleteUser($userId);
     }
 
-    /* ===== STATS ===== */
+   
     public function getUserStats($userId) {
         $bookings = $this->bookingDao->getByUser($userId);
         $activeBookings = $this->bookingDao->getUserActiveBookings($userId);
