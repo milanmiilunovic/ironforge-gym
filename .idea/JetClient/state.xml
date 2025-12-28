@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="folders">
+      <list>
+        <folderState>
+          <option name="environmentGroups">
+            <list>
+              <environmentGroupState>
+                <option name="name" value="Default" />
+              </environmentGroupState>
+            </list>
+          </option>
+          <option name="folders">
+            <list>
+              <folderState>
+                <option name="id" value="8d9a798d-c5c8-4b73-a7c9-167d86450237" />
+                <option name="name" value="Test" />
+                <option name="requests">
+                  <list>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;title&quot;: &quot;Yoga Basic2s 3&quot;,&#10;  &quot;trainer_id&quot;: 1,&#10;  &quot;category_id&quot;: 2,&#10;  &quot;schedule_time&quot;: &quot;2025-11-20 10:00:00&quot;,&#10;  &quot;capacity&quot;: 20,&#10;  &quot;description&quot;: &quot;Beginner-friendly yoga session&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="disabled" value="true" />
+                            <option name="key" value="Authentication" />
+                            <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7InVzZXJfaWQiOjgsImZ1bGxfbmFtZSI6IlVzZXIgQWNjb3VudCIsImVtYWlsIjoidXNlckBpcm9uZm9yZ2UuY29tIiwicm9sZSI6InVzZXIiLCJqb2luX2RhdGUiOiIyMDI1LTEyLTI2In0sImlhdCI6MTc2Njc0NTcwMSwiZXhwIjoxNzY2ODMyMTAxfQ.Ra4bV3cc3Xc73_a9yUKiTFksC8nU15m1RiH36WJsYnk" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="3b144698-5272-4cbb-b9d6-3f8b6bd8734f" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="Trainers" />
+                      <option name="sortWeight" value="1000000" />
+                      <option name="url" value="ALTER TABLE classes ADD COLUMN duration_minutes INT DEFAULT 60 AFTER schedule_time;" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;email&quot;: &quot;user@ironforge.com&quot;,&#10;  &quot;password&quot;: &quot;Test123!&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Authorization" />
+                            <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7InVzZXJfaWQiOjksImZ1bGxfbmFtZSI6ImFkbWluIEFjY291bnQiLCJlbWFpbCI6ImFkbWluQGlyb25mb3JnZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJqb2luX2RhdGUiOiIyMDI1LTEyLTI2In0sImlhdCI6MTc2Njc1NDU0MCwiZXhwIjoxNzY2ODQwOTQwfQ.U3L7n4mmfdEmmPTEoU2Za9ZI_guCpwfEY_QfeA9bGQ8" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="62a8a752-435c-40a7-8800-1473d4931749" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="Auth" />
+                      <option name="queryParams">
+                        <list>
+                          <queryParamState>
+                            <option name="disabled" value="true" />
+                            <option name="key" value="password" />
+                            <option name="value" value="Password123!" />
+                          </queryParamState>
+                          <queryParamState>
+                            <option name="disabled" value="true" />
+                            <option name="key" value="email" />
+                            <option name="value" value="test@gmail.com" />
+                          </queryParamState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="2000000" />
+                      <option name="url" value="http://localhost/ironforge-gym/backend/user/info/3" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;user_id&quot;: 2,&#10;  &quot;class_id&quot;: 2&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="id" value="c4496eb6-c3cc-4a56-a7d2-57852f253f4e" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="Booking" />
+                      <option name="sortWeight" value="3000000" />
+                      <option name="url" value="http://localhost/ironforge-gym/backend/user/info/8" />
+                    </requestState>
+                  </list>
+                </option>
+                <option name="sortWeight" value="1000000" />
+              </folderState>
+            </list>
+          </option>
+          <option name="id" value="71437fee-da09-4704-8d61-10fd1c15eddc" />
+          <option name="name" value="New Project" />
+          <option name="selectedEnvironmentIds">
+            <map>
+              <entry key="default" />
+            </map>
+          </option>
+          <option name="syncProperties">
+            <synchronizationPropertiesState>
+              <option name="autoSync" value="true" />
+              <option name="folderPath" value="D:\wamp\www\ironforge-gym\.jetclient" />
+            </synchronizationPropertiesState>
+          </option>
+        </folderState>
+      </list>
+    </option>
+    <option name="id" value="b06b0749-1c39-4f52-b0f9-daea5ecd4806" />
+    <option name="version" value="6" />
+  </component>
+</project>

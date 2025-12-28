@@ -1,0 +1,280 @@
+<style>
+    /* General Body Styles */
+    body {
+        background-color: #0a0a0a;
+        color: #c4c4c4;
+    }
+
+    /* Card Styles */
+    .card {
+        background: #151515;
+        border: 1px solid #363636;
+        border-radius: 8px;
+        margin-bottom: 30px;
+    }
+
+    .card-header {
+        background: #1a1a1a;
+        border-bottom: 1px solid #363636;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-header h2 {
+        color: #ffffff;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    /* Table Styles */
+    .table {
+        color: #c4c4c4;
+        border-top: none;
+    }
+
+    .table thead th {
+        background-color: #1a1a1a;
+        color: #f36100;
+        border-bottom: 1px solid #363636;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .table tbody tr {
+        border-bottom: 1px solid #363636;
+    }
+
+    .table tbody td {
+        background: transparent;
+        vertical-align: middle;
+        padding: 15px;
+    }
+
+    .table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+        background-color: #f36100;
+        border: none;
+        font-weight: 600;
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+        background-color: #d95300;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border: none;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+    }
+
+    /* Modal Styles */
+    .modal-content {
+        background: #0a0a0a;
+        border: 1px solid #363636;
+        color: #c4c4c4;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #363636;
+        color: #ffffff;
+    }
+    
+     .modal-header .btn-close {
+        background-color: #f36100;
+    }
+
+    .modal-body .form-label {
+        color: #ffffff;
+    }
+
+    .modal-body .form-control {
+        background-color: #1a1a1a;
+        border: 1px solid #363636;
+        color: #c4c4c4;
+    }
+
+    .modal-body .form-control:focus {
+        background-color: #1a1a1a;
+        border-color: #f36100;
+        color: #ffffff;
+    }
+</style>
+<div class="container mt-5">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h1 style="color: #ffffff; font-weight: 700; text-transform: uppercase;">Admin <span style="color: #f36100;">Dashboard</span></h1>
+    </div>
+
+    <!-- Trainers Management -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Manage Trainers</h2>
+            <button id="add-trainer-btn" class="btn btn-primary" data-toggle="modal" data-target="#trainer-modal">
+                <i class="fa fa-plus"></i> Add Trainer
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Specialization</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trainers-table-body">
+                        <!-- Dynamic content here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Classes Management -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Manage Classes</h2>
+            <button id="add-class-btn" class="btn btn-primary" data-toggle="modal" data-target="#class-modal">
+                <i class="fa fa-plus"></i> Add Class
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Trainer</th>
+                            <th>Schedule</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="classes-table-body">
+                        <!-- Dynamic content here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Trainer Modal -->
+<div class="modal fade" id="trainer-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Trainer Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="trainer-form">
+                    <input type="hidden" id="trainer-id">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="trainer-name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Specialization</label>
+                        <input type="text" class="form-control" id="trainer-specialization" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="trainer-email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="trainer-phone">
+                    </div>
+                     <div class="mb-3">
+                        <label class="form-label">Experience (Years)</label>
+                        <input type="number" class="form-control" id="trainer-experience">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Save Trainer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Class Modal -->
+<div class="modal fade" id="class-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Class Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="class-form">
+                    <input type="hidden" id="class-id">
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control" id="class-title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" id="class-description" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Trainer</label>
+                        <select class="form-select" id="class-trainer-select" required>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" id="class-category-select" required>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Schedule</label>
+                        <input type="datetime-local" class="form-control" id="class-schedule" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Capacity</label>
+                        <input type="number" class="form-control" id="class-capacity" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Save Class</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // This script is executed by the router after the view is loaded into the DOM.
+    // It ensures that AdminService.init() is called only after all elements
+    // like '#class-category-select' are available.
+    if (typeof AdminService !== 'undefined') {
+        AdminService.init();
+    }
+</script>
+
+<script>
+    AdminService.loadTrainers();
+    AdminService.loadClasses();
+</script>

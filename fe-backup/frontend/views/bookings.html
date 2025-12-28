@@ -1,0 +1,53 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>My Bookings</h2>
+                    <div class="bt-option">
+                        <a href="#/" class="nav-link">Home</a>
+                        <span>Bookings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bookings Section Begin -->
+<section class="pricing-section spad">
+    <div class="container">
+        <!-- Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap;">
+                    <div>
+                        <h3 style="color: #ffffff; font-weight: 600; margin-bottom: 5px;">My Bookings</h3>
+                        <p style="color: #c4c4c4; margin-bottom: 0;">Manage your class reservations</p>
+                    </div>
+                    <a href="#/classes" class="primary-btn nav-link" style="margin-top: 15px;">
+                        <i class="fa fa-plus"></i> BOOK NEW CLASS
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic List Container -->
+        <div class="row" id="bookingsList">
+            <!-- Dynamic content will be injected here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" style="display: none; text-align: center; padding: 80px 20px; background: #0a0a0a; border-radius: 8px; border: 1px solid #363636;">
+            <i class="fa fa-calendar-times-o" style="font-size: 64px; color: #363636; margin-bottom: 20px;"></i>
+            <h4 style="color: #ffffff; font-weight: 600; margin-bottom: 10px;">No Bookings Found</h4>
+            <p style="color: #c4c4c4; margin-bottom: 30px;">You don't have any active bookings yet.</p>
+            <a href="#/classes" class="primary-btn nav-link">BROWSE CLASSES</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    BookingService.initializeUserBookings();
+</script>
