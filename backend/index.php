@@ -17,6 +17,11 @@ require_once __DIR__ . '/rest/services/CategoryService.php';
 // ==== INCLUDE MIDDLEWARE & ROLES ==== //
 require_once __DIR__ . '/middleware/AuthMiddleware.php';
 
+
+header('Access-Control-Allow-Origin: *'); // Or put your specific frontend URL here
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 // ==== REGISTER SERVICES ==== //
 Flight::register('userService', 'UserService');
 Flight::register('userAuthService', 'UserAuthService'); // Auth service
