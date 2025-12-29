@@ -4,7 +4,7 @@ let ClassesService = {
         const classesGrid = document.getElementById("classesGrid");
 
         // Assuming your backend route is /classes
-        fetch("http://localhost/ironforge-gym/backend/classes")
+        fetch(Constants.PROJECT_BASE_URL + "classes")
             .then((res) => {
                 return res.json();
             })

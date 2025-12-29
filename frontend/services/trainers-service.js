@@ -4,7 +4,7 @@ let TrainersService = {
 
         const trainers_div = document.getElementById("trainers-div");
 
-        fetch("http://localhost/ironforge-gym/backend/trainers")
+        fetch(Constants.PROJECT_BASE_URL + "trainers")
             .then((res) => {
                 return res.json();
             })
