@@ -53,6 +53,7 @@ Flight::before('start', function () {
     if (str_starts_with($url, '/auth/login') ||
         str_starts_with($url, '/auth/register') ||
         str_starts_with($url, '/v1/docs') ||
+        str_starts_with($url, '/bookings') ||
         $url === '/' ||
         $url === '/health' ||
         str_starts_with($url, '/trainers') ||
