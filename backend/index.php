@@ -68,7 +68,7 @@ Flight::before('start', function () {
 });
 
 // ==== INCLUDE ROUTES ==== //
-require_once __DIR__ . '/rest/routes/AuthRoutes.php'; // Auth routes first
+require_once __DIR__ . '/rest/routes/authRoutes.php'; // Auth routes first
 require_once __DIR__ . '/rest/routes/healthRoute.php';
 require_once __DIR__ . '/rest/routes/adminRoutes.php';
 require_once __DIR__ . '/rest/routes/userRoutes.php';
@@ -78,10 +78,6 @@ require_once __DIR__ . '/rest/routes/trainerRoutes.php';
 require_once __DIR__ . '/rest/routes/categoryRoutes.php';
 require_once __DIR__ . '/rest/routes/bookingRoutes.php';
 
-// ==== DEFAULT ROUTE ==== //
-Flight::route('/allah', function() {
-    echo 'API is running 🚀';
-});
 
 // ==== START FLIGHT ==== //
 Flight::start();
