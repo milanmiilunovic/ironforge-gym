@@ -1,1 +1,6 @@
 https://walrus-app-j9zhn.ondigitalocean.app/#/
+
+ADMIN CREDENTIALS:
+
+EMAIL: ironforge@admin.com
+PASSWORD: Admin123
