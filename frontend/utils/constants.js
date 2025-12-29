@@ -1,5 +1,5 @@
 let Constants = {
-   PROJECT_BASE_URL: "http://localhost/ironforge-gym/backend/",
+   PROJECT_BASE_URL: "https://lobster-app-qow7u.ondigitalocean,app",
    USER_ROLE: "user",
    ADMIN_ROLE: "admin"
 };
