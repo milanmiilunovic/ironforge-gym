@@ -14,7 +14,7 @@ class Config
     public static function DATABASE_NAME()
     {
 
-        return Config::get_env("DB_NAME", "iron_forge_gym");
+        return Config::get_env("DB_NAME", "ironforge_gym");
     }
 
     public static function DATABASE_PORT()
